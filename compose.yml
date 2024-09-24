@@ -4,5 +4,6 @@ services:
     command: fastapi run app/main.py --port 80
     volumes:
       - ./app:/code/app
+      - ${HOME}/valheim:/mnt/valheim
     ports:
       - 8001:80
