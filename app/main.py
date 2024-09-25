@@ -1,12 +1,13 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
 
-app = FastAPI()
+from .routers import permittedlist, status
 
 origins = [
     'https://coffeeheim.com',
 ]
+
+app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -15,12 +16,5 @@ app.add_middleware(
     allow_headers=['*'],
 )
 
-
-@app.get('/status')
-async def status():
-    return JSONResponse({})
-
-
-@app.post('/permittedlist')
-async def permittedlist():
-    return JSONResponse({})
+app.include_router(permittedlist.router)
+app.include_router(status.router)
