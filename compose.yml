@@ -1,6 +1,7 @@
 services:
   fastapi:
     build: .
+    container_name: api.coffeeheim.com
     command: fastapi run app/main.py --port 80
     volumes:
       - ./app:/code/app

@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from .configs import ALLOW_ORIGINS
 from .routers import permittedlist, status
+from .settings import ALLOW_ORIGINS
 
 app = FastAPI()
 app.add_middleware(

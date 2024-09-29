@@ -1,9 +1,8 @@
+from app.fileutils import json_content
 from fastapi import APIRouter
 from fastapi.responses import JSONResponse
 
-from app.fileutils import json_content
-
-from ..configs import SEASONS, VALHEIM_SERVER
+from ..settings import SEASONS, VALHEIM_SERVER
 
 router = APIRouter()
 
